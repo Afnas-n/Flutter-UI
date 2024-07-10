@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class CardPage extends StatefulWidget {
   const CardPage({super.key});
@@ -11,88 +12,177 @@ class _CardPageState extends State<CardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Card(
-          elevation: 20,
-          borderOnForeground: true,
-          child: Container(
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/image/andes.jpg'),
-                    fit: BoxFit.cover),
-                borderRadius: BorderRadius.all(Radius.elliptical(12, 12))),
-            height: 400,
-            width: 350,
-            child: Column(
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.bookmark_outline_rounded,
-                            shadows: [],
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            const SizedBox(height: 50),
+            Center(
+              child: Card(
+                elevation: 20,
+                borderOnForeground: true,
+                child: Container(
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/image/andes.jpg'),
+                          fit: BoxFit.cover),
+                      borderRadius:
+                          BorderRadius.all(Radius.elliptical(12, 12))),
+                  height: 400,
+                  width: 300,
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CircleAvatar(
+                              radius: 15,
+                              backgroundColor: Colors.black38,
+                              child: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.arrow_back_ios_new_rounded,
+                                  size: 15,
+                                ),
+                                color: Colors.white60,
+                              ),
+                            ),
                           ),
-                          color: Colors.white,
-                        ))
-                  ],
-                ),
-                const SizedBox(height: 200),
-                // ignore: avoid_unnecessary_containers
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    decoration: const BoxDecoration(
-                        color: Colors.black38,
-                        borderRadius: BorderRadius.all(Radius.circular(12))),
-                    child: const Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Andes Mountain ",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 10),
-                            ),
-                            Text(
-                              "South America",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 10),
-                            ),
-                          ],
+                          Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: CircleAvatar(
+                                radius: 16,
+                                backgroundColor: Colors.black38,
+                                child: IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                    Icons.bookmark_outline_rounded,
+                                    size: 16,
+                                  ),
+                                  color: Colors.white,
+                                ),
+                              ))
+                        ],
+                      ),
+                      const SizedBox(height: 250),
+                      // ignore: avoid_unnecessary_containers
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          width: 300,
+                          height: 60,
+                          decoration: const BoxDecoration(
+                              color: Colors.black54,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(12))),
+                          child: const Column(
+                            children: [
+                              Row(
+                                children: [
+                                  SizedBox(width: 10),
+                                  Text("Andes Mountain ",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold)),
+                                  SizedBox(width: 70),
+                                  Text(
+                                    "Price",
+                                    style: TextStyle(color: Colors.white),
+                                  )
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(width: 8),
+                                  Icon(
+                                    Icons.location_on_outlined,
+                                    color: Colors.white60,
+                                    size: 20,
+                                  ),
+                                  Text(
+                                    "South America",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 13),
+                                  ),
+                                  SizedBox(width: 118),
+                                  Text(
+                                    "\$",
+                                    style: TextStyle(color: Colors.white60),
+                                  ),
+                                  Text(
+                                    "230",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "South America",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 10),
-                            ),
-                            Text(
-                              "America",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 10),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
+              ),
+            ),
+            const SizedBox(height: 24),
+            const Row(
+              children: [
+                SizedBox(width: 28),
+                Text(
+                  "Overview",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(width: 40),
+                Text(
+                  "Details",
+                  style: TextStyle(color: Colors.black54),
+                )
               ],
             ),
-          ),
+            const SizedBox(height: 25),
+            const Row(
+              children: <Widget>[
+                SizedBox(width: 28),
+                Icon(Icons.access_time_filled_sharp, size: 16),
+                SizedBox(width: 12),
+                Text("8 hours", style: TextStyle(color: Colors.black54)),
+                SizedBox(width: 40),
+                Icon(Icons.cloud, size: 16),
+                SizedBox(width: 12),
+                Text("16 °C "),
+                SizedBox(width: 70),
+                Icon(Icons.star_outlined, size: 16),
+                SizedBox(
+                  width: 12,
+                ),
+                Text("4.2", style: TextStyle(color: Colors.black54))
+              ],
+            ),
+            const SizedBox(height: 30),
+            // ignore: sized_box_for_whitespace
+            Container(
+              width: 350,
+              child: const Text(
+                'This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. ',
+                style: TextStyle(color: Colors.black54),
+                softWrap: true,
+              ),
+            ),
+          ],
         ),
       ),
-    ));
-    ;
+      // bottomNavigationBar: TextButton(
+      //   style: ButtonStyle(backgroundColor:WidgetStatePropertyAll(Color(Colors.amberAccent)) ),
+      //   onPressed: () {},
+      //   child: Row(
+      //     children: [Text("hi")],
+      //   ),
+      // ),
+    );
   }
 }

@@ -24,10 +24,10 @@ class _HomeState extends State<Home> {
     Text(""),
   ];
   final List<CardModel> _carDetails = [
-    CardModel(cardName: "Mount fuji", cardPlace: "Tokyo", cardCountry: "Japan"),
+    CardModel(cardName: "Mount Fuji", cardPlace: "Tokyo", cardCountry: "Japan"),
     CardModel(
         cardName: "Andes Mountain",
-        cardPlace: "South,America",
+        cardPlace: "South America",
         cardCountry: "America"),
     CardModel(
         cardName: "Eiffel Tower", cardPlace: "paris", cardCountry: "France")
@@ -95,12 +95,15 @@ class _HomeState extends State<Home> {
                   ),
                   Text(
                     "Popular Places",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   ),
                   SizedBox(
-                    width: 165,
+                    width: 160,
                   ),
-                  Text("View all")
+                  Text(
+                    "View all",
+                    style: TextStyle(color: Colors.grey),
+                  )
                 ],
               ),
             ),
@@ -134,6 +137,8 @@ class _HomeState extends State<Home> {
                     child: MyCards(
                       carData: _carDetails[0],
                       imagepath: 'assets/image/fuji.jpg',
+                      width1: 50,
+                      rating1: "4.8",
                     ),
                     onTap: () {
                       log("Card gesture");
@@ -143,6 +148,8 @@ class _HomeState extends State<Home> {
                     child: MyCards(
                       carData: _carDetails[1],
                       imagepath: 'assets/image/andes.jpg',
+                      rating1: "4.2",
+                      width1: 10,
                     ),
                     onTap: () {
                       log("Card inkwell");
@@ -155,7 +162,9 @@ class _HomeState extends State<Home> {
                   GestureDetector(
                     child: MyCards(
                       carData: _carDetails[2],
-                      imagepath: 'assets/image/EiffelTower.jpg',
+                      imagepath: 'assets/image/eifel.jpg',
+                      rating1: "4.9",
+                      width1: 50,
                     ),
                     onTap: () {},
                   ),
