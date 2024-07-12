@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:my_app/Models/card_model.dart';
 import 'package:my_app/Pages/bottom_bar.dart';
 import 'package:my_app/Pages/card_page.dart';
+import 'package:my_app/Pages/card_page1.dart';
+import 'package:my_app/Pages/card_page3.dart';
 import 'package:my_app/custom_Widget/customcard.dart';
 
 class Home extends StatefulWidget {
@@ -141,7 +143,10 @@ class _HomeState extends State<Home> {
                       rating1: "4.8",
                     ),
                     onTap: () {
-                      log("Card gesture");
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CardPage1()));
                     },
                   ),
                   GestureDetector(
@@ -152,7 +157,6 @@ class _HomeState extends State<Home> {
                       width1: 10,
                     ),
                     onTap: () {
-                      log("Card inkwell");
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -166,7 +170,12 @@ class _HomeState extends State<Home> {
                       rating1: "4.9",
                       width1: 50,
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CardPage3()));
+                    },
                   ),
                   // Stack(children: [
                   //   Container(

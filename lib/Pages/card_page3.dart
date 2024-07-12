@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CardPage extends StatefulWidget {
-  const CardPage({super.key});
+class CardPage3 extends StatefulWidget {
+  const CardPage3({super.key});
 
   @override
-  State<CardPage> createState() => _CardPageState();
+  State<CardPage3> createState() => _CardPage3State();
 }
 
-class _CardPageState extends State<CardPage> {
+class _CardPage3State extends State<CardPage3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class _CardPageState extends State<CardPage> {
                 child: Container(
                   decoration: const BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('assets/image/andes.jpg'),
+                          image: AssetImage('assets/image/eifel.jpg'),
                           fit: BoxFit.cover),
                       borderRadius:
                           BorderRadius.all(Radius.elliptical(12, 12))),
@@ -80,7 +80,7 @@ class _CardPageState extends State<CardPage> {
                               Row(
                                 children: [
                                   SizedBox(width: 10),
-                                  Text("Andes Mountain ",
+                                  Text("Eiffel Tower ",
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 20,
@@ -101,7 +101,7 @@ class _CardPageState extends State<CardPage> {
                                     size: 20,
                                   ),
                                   Text(
-                                    "South America",
+                                    "Paris",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 13),
                                   ),
@@ -111,7 +111,7 @@ class _CardPageState extends State<CardPage> {
                                     style: TextStyle(color: Colors.white60),
                                   ),
                                   Text(
-                                    "230",
+                                    "1000",
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -149,11 +149,11 @@ class _CardPageState extends State<CardPage> {
                 SizedBox(width: 28),
                 Icon(Icons.access_time_filled_sharp, size: 16),
                 SizedBox(width: 12),
-                Text("8 hours", style: TextStyle(color: Colors.black54)),
+                Text("12 hours", style: TextStyle(color: Colors.black54)),
                 SizedBox(width: 40),
                 Icon(Icons.cloud, size: 16),
                 SizedBox(width: 12),
-                Text("16 °C "),
+                Text("22 °C "),
                 SizedBox(width: 70),
                 Icon(Icons.star_outlined, size: 16),
                 SizedBox(
@@ -190,7 +190,7 @@ class _CardPageState extends State<CardPage> {
                   'Book Now',
                   style: TextStyle(color: Colors.white),
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: 10),
                 Icon(
                   Icons.send,
                   color: Colors.white,
