@@ -208,3 +208,8 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+
+//toast
+//snakbar
+//alert box

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/Pages/alert.dart';
 import 'package:my_app/Pages/home_page.dart';
 import 'package:my_app/Pages/navigation_bar.dart';
 import 'package:my_app/Pages/signup_page.dart';
@@ -150,7 +151,15 @@ class _SignInState extends State<SignIn> {
                           MaterialPageRoute(
                               builder: (context) => const NavigationBarApp()));
                     },
-                    child: const Text("navigationbar"))
+                    child: const Text("navigationbar")),
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Alert()));
+                    },
+                    child: Text("Alert"))
               ],
             ),
           ]),
