@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/Pages/image_picker.dart';
+import 'package:my_app/Pages/api_call.dart';
+import 'package:my_app/Pages/network_api.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: screenImagePicker(),
+      home: NetworkApi(
+        posts: ApiCall().fetchPosts(),
+      ),
     );
   }
 }
