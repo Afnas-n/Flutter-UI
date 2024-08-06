@@ -1,11 +1,15 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:my_app/Pages/alert.dart';
+import 'package:my_app/Pages/darkmode.dart';
 import 'package:my_app/Pages/home_page.dart';
 import 'package:my_app/Pages/navigation_bar.dart';
 import 'package:my_app/Pages/signup_page.dart';
 import 'package:my_app/Pages/text_controller.dart';
 import 'package:my_app/custom_Widget/custom_textfield.dart';
 import 'package:my_app/custom_Widget/custom_validator.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -26,10 +30,35 @@ class _SignInState extends State<SignIn> {
     });
   }
 
+  // bool dark = false;
+  String ad = Darkmode.darkmode;
+  String appText = "";
+  void darkcall() async {
+    SharedPreferences sharedPreference = await SharedPreferences.getInstance();
+    var dark = sharedPreference.getBool(ad);
+    if (dark != null && dark) {
+      appText = "True to app";
+    } else {
+      appText = "False on App";
+    }
+    log("$dark");
+  }
+
+  @override
+  void initState() {
+    darkcall();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // backgroundColor: dark ? Colors.red : Colors.black,
+        title: Text(
+          appText,
+          style: TextStyle(color: Colors.black),
+        ),
         automaticallyImplyLeading: false,
       ),
       body: Padding(
@@ -104,7 +133,10 @@ class _SignInState extends State<SignIn> {
                 ),
                 const SizedBox(height: 100),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Darkmode dark = Darkmode();
+                    dark.setDarkmode();
+                  },
                   child: Text(
                     'Forgot Password ?',
                     style: TextStyle(color: Colors.purple[500]),

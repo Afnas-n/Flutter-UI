@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/Pages/api_call.dart';
-import 'package:my_app/Pages/network_api.dart';
+import 'package:my_app/Pages/dark.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +11,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NetworkApi(
-        posts: ApiCall().fetchPosts(),
-      ),
+      home: Dark(),
     );
+    // return MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   home: NetworkApi(
+    //     posts: ApiCall().fetchPosts(),
+    //   ),
+    // );
   }
 }
