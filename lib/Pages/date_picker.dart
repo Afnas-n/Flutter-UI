@@ -29,24 +29,24 @@ class _DatePickerAppState extends State<DatePickerApp> {
     DateTime? picked = await showDatePicker(
         context: context,
         initialDate: selectedDate,
-        firstDate: new DateTime(2016),
-        lastDate: new DateTime(2222));
+        firstDate: DateTime(2016),
+        lastDate: DateTime(2222));
     if (picked != null && picked != selectedDate) {
       setState(() => selectedDate = picked);
-      print(picked);
+      return(picked);
     } else {
-      print(picked);
+      return(picked);
     }
   }
 
   Future selectTime(BuildContext context) async {
     TimeOfDay? picked =
         await showTimePicker(context: context, initialTime: TimeOfDay.now());
-    if (picked != null && picked != selectTime) {
+    if (picked != null ) {
       setState(() => selectedTime = picked);
-      print(picked);
+      return (picked);
     } else {
-      print(picked);
+      return (picked);
     }
   }
 

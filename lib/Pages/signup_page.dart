@@ -142,7 +142,6 @@ class _SignUpState extends State<SignUp> {
                     fixedSize: const Size.fromWidth(300)),
                 onPressed: () {
                   if (formkey.currentState!.validate()){
-                      print(nameController.text);
                        Navigator.push(
                             context,
                             MaterialPageRoute(

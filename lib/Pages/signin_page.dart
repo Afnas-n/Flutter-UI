@@ -118,7 +118,6 @@ class _SignInState extends State<SignIn> {
                   ),
                   onPressed: () {
                     if (userSigninkey.currentState!.validate()) {
-                      print(userNameController.text);
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(

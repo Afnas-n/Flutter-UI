@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
     CardModel(
         cardName: "Eiffel Tower", cardPlace: "paris", cardCountry: "France")
   ];
-  void _onTappe(int index) {
+  void onTappe(int index) {
     setState(() {
       _inDex = index;
     });

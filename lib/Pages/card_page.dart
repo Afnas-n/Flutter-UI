@@ -190,7 +190,7 @@ class _CardPageState extends State<CardPage> {
                   'Book Now',
                   style: TextStyle(color: Colors.white),
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: 10),
                 Icon(
                   Icons.send,
                   color: Colors.white,

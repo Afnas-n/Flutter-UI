@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:my_app/controller/image_controller.dart';
 
-class screenImagePicker extends StatefulWidget {
-  const screenImagePicker({super.key});
+class ScreenImagePicker extends StatefulWidget {
+  const ScreenImagePicker({super.key});
 
   @override
-  State<screenImagePicker> createState() => _screenImagePickerState();
+  State<ScreenImagePicker> createState() => _ScreenImagePickerState();
 }
 
-class _screenImagePickerState extends State<screenImagePicker> {
+class _ScreenImagePickerState extends State<ScreenImagePicker> {
   Uint8List? image;
 
   imagePick(ImageSource source) async {
@@ -20,7 +20,7 @@ class _screenImagePickerState extends State<screenImagePicker> {
     if (file != null) {
       return await file.readAsBytes();
     }
-    print("No image Selected");
+    return ("No image Selected");
   }
 
   void selectimage() async {
@@ -56,7 +56,7 @@ class _screenImagePickerState extends State<screenImagePicker> {
               onPressed: () {
                 url.launchingUrl();
               },
-              child: Text("Url"),
+              child: const Text("Url"),
             )
           ],
         ),

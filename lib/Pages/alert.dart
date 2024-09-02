@@ -11,8 +11,8 @@ class Alert extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            DialogExample(),
-            SnakBar1(),
+            const DialogExample(),
+            const SnakBar1(),
             TextButton(
                 onPressed: () {
                   Fluttertoast.showToast(
@@ -23,7 +23,7 @@ class Alert extends StatelessWidget {
                       textColor: Colors.black,
                       fontSize: 16.0);
                 },
-                child: Text("Toast"))
+                child: const Text("Toast"))
           ],
         ),
       ),
@@ -39,7 +39,7 @@ class SnakBar1 extends StatelessWidget {
     return TextButton(
         onPressed: () {
           // const SnackBar(content: );
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             content: Text("its snak bar"),
           ));
         },
