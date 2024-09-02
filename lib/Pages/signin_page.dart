@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:my_app/Pages/alert.dart';
 import 'package:my_app/Pages/darkmode.dart';
