@@ -41,7 +41,6 @@ class _SignInState extends State<SignIn> {
     } else {
       appText = "False on App";
     }
-    log("$dark");
   }
 
   @override
@@ -57,7 +56,7 @@ class _SignInState extends State<SignIn> {
         // backgroundColor: dark ? Colors.red : Colors.black,
         title: Text(
           appText,
-          style: TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.black),
         ),
         automaticallyImplyLeading: false,
       ),
@@ -120,9 +119,14 @@ class _SignInState extends State<SignIn> {
                     fixedSize: const Size.fromWidth(310),
                   ),
                   onPressed: () {
-                    if (userSigninkey.currentState!.validate())
-                      // ignore: curly_braces_in_flow_control_structures, avoid_print
+                    if (userSigninkey.currentState!.validate()) {
                       print(userNameController.text);
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Home()));
+                    }
+                    // ignore: curly_braces_in_flow_control_structures, avoid_print
                   },
                   child: const Text(
                     'Sign in',
@@ -191,7 +195,7 @@ class _SignInState extends State<SignIn> {
                           MaterialPageRoute(
                               builder: (context) => const Alert()));
                     },
-                    child: Text("Alert"))
+                    child: const Text("Alert"))
               ],
             ),
           ]),

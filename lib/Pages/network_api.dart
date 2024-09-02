@@ -21,7 +21,7 @@ class NetworkApi extends StatelessWidget {
                       child: ListTile(
                         title: Text(
                           snapshot.data![index].title,
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style:const TextStyle(fontWeight: FontWeight.bold),
                         ),
                         subtitle: Text(snapshot.data![index].userId.toString()),
                       ),
@@ -31,8 +31,9 @@ class NetworkApi extends StatelessWidget {
             return ListView.builder(
               itemCount: 40,
               itemBuilder: (context, index) {
+                // ignore: avoid_unnecessary_containers
                 return Container(
-                  child: Column(
+                  child:const  Column(
                     children: [Text("Title"), Text("UseId")],
                   ),
                 );

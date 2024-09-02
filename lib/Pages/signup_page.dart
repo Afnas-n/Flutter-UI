@@ -141,9 +141,15 @@ class _SignUpState extends State<SignUp> {
                     backgroundColor: Colors.purple[500],
                     fixedSize: const Size.fromWidth(300)),
                 onPressed: () {
-                  if (formkey.currentState!.validate())
+                  if (formkey.currentState!.validate()){
+                      print(nameController.text);
+                       Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignIn()));
+                  }
                     // ignore: curly_braces_in_flow_control_structures, avoid_print
-                    print(nameController.text);
+                    
                 },
                 child: const Text(
                   'Sign up',

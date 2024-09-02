@@ -1,5 +1,5 @@
 class Validation {
-  String emailValidator(String value) {
+  dynamic emailValidator(String value) {
     if (value.isEmpty) {
       return 'Enter your Email address';
     }
@@ -8,10 +8,10 @@ class Validation {
         .hasMatch(value)) {
       return 'Enter a Valid Email address';
     }
-    return '';
+    return null;
   }
 
-  String passwordValidator(String value) {
+  dynamic passwordValidator(String value) {
     String errorMessage = '';
 
     if (value.length < 6) {
@@ -22,16 +22,16 @@ class Validation {
     }
 
     if (!value.contains(RegExp(r'[a-z]'))) {
-     return errorMessage += '• Lowercase letter is missing.\n';
+      return errorMessage += '• Lowercase letter is missing.\n';
     }
 
     if (!value.contains(RegExp(r'[0-9]'))) {
-     return errorMessage += '• Digit is missing.\n';
+      return errorMessage += '• Digit is missing.\n';
     }
 
     if (!value.contains(RegExp(r'[!@#%^&*(),.?":{}|<>]'))) {
-     return errorMessage += '• Special character is missing.\n';
+      return errorMessage += '• Special character is missing.\n';
     }
-    return "";
+    return null;
   }
 }
