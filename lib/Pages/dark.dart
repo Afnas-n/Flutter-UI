@@ -54,6 +54,7 @@ class _DarkState extends State<Dark> {
                 var share = await SharedPreferences.getInstance();
                 share.remove(Darkmode.darkmode).then((value) {
                   log("Loggedout succesfully");
+                  // ignore: use_build_context_synchronously
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => const Home()));
                 });
