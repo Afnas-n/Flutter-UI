@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/Models/user_model.dart';
 import 'package:my_app/Pages/signin_page.dart';
 import 'package:my_app/custom_Widget/custom_textField.dart';
 import 'package:my_app/custom_Widget/custom_validator.dart';
@@ -141,14 +144,36 @@ class _SignUpState extends State<SignUp> {
                     backgroundColor: Colors.purple[500],
                     fixedSize: const Size.fromWidth(300)),
                 onPressed: () {
-                  if (formkey.currentState!.validate()){
-                       Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SignIn()));
+                  if (formkey.currentState!.validate()) {
+                    formkey.currentState!.dispose();
+                    try {
+                      FirebaseAuth.instance
+                          .createUserWithEmailAndPassword(
+                              email: emailController.text,
+                              password: passwordController.text)
+                          .then((credential) async {
+                        String id = credential.user!.uid;
+                        UserModel userinfo = UserModel(
+                            username: userNameController.text,
+                            email: emailController.text,
+                            password: passwordController.text,
+                            id: id);
+                        await FirebaseFirestore.instance
+                            .collection("Users")
+                            .doc(id)
+                            .set(userinfo.tojson())
+                            .then((onValue) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SignIn()));
+                        });
+                      });
+                    } catch (e) {
+                      print(e);
+                    }
                   }
-                    // ignore: curly_braces_in_flow_control_structures, avoid_print
-                    
+                  // ignore: curly_braces_in_flow_control_structures, avoid_print
                 },
                 child: const Text(
                   'Sign up',

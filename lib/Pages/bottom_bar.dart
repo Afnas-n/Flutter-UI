@@ -50,7 +50,7 @@ class _BottomBarState extends State<BottomBar> {
               label: ""),
         ],
         selectedIconTheme: const IconThemeData(color: Colors.deepOrangeAccent),
-        type: BottomNavigationBarType.shifting,
+        // type: BottomNavigationBarType.shifting,
         currentIndex: _inDex,
         onTap: _onTappe,
       );

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/Pages/alert.dart';
+import 'package:my_app/Pages/bottom_bar.dart';
 import 'package:my_app/Pages/darkmode.dart';
 import 'package:my_app/Pages/home_page.dart';
-import 'package:my_app/Pages/navigation_bar.dart';
 import 'package:my_app/Pages/signup_page.dart';
 import 'package:my_app/Pages/text_controller.dart';
 import 'package:my_app/custom_Widget/custom_textfield.dart';
@@ -182,7 +182,7 @@ class _SignInState extends State<SignIn> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const NavigationBarApp()));
+                              builder: (context) => const BottomBar()));
                     },
                     child: const Text("navigationbar")),
                 TextButton(
