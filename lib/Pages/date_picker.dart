@@ -31,8 +31,8 @@ class _DatePickerAppState extends State<DatePickerApp> {
         initialDate: selectedDate,
         firstDate: DateTime(2016),
         lastDate: DateTime(2222));
-    if (picked != null && picked != selectedDate) {
-      setState(() => selectedDate = picked);
+    if (picked != selectedDate) {
+      setState(() => selectedDate = picked!);
       return(picked);
     } else {
       return(picked);

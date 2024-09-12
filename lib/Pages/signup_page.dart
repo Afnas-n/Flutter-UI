@@ -145,7 +145,7 @@ class _SignUpState extends State<SignUp> {
                     fixedSize: const Size.fromWidth(300)),
                 onPressed: () {
                   if (formkey.currentState!.validate()) {
-                    formkey.currentState!.dispose();
+                    formkey.currentState!.reset();
                     try {
                       FirebaseAuth.instance
                           .createUserWithEmailAndPassword(
